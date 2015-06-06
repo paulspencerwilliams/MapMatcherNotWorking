@@ -1,5 +1,7 @@
 package uk.me.paulswilliams.mockitohamcrest;
 
+import java.util.HashMap;
+
 public class Service {
 	private final Repository repository;
 
@@ -8,7 +10,10 @@ public class Service {
 	}
 
 	public void create(Product product) {
-		repository.create(new Product(product.id, product.name));
+		Product clone = new Product(product.id, product.name);
+		HashMap<String, Product> map = new HashMap<>();
+		map.put(product.name, clone);
+		repository.create(map);
 	}
 
 

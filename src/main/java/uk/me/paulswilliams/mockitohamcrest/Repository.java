@@ -1,5 +1,7 @@
 package uk.me.paulswilliams.mockitohamcrest;
 
+import java.util.HashMap;
+
 public interface Repository {
-	void create(Product production);
+	void create(HashMap<String, Product> products);
 }
